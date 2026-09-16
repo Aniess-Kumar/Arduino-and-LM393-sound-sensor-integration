@@ -1,0 +1,39 @@
+LM393 SENSOR + ARDUINO UNO CONNECTIONS
+====================================
+
+Basic Digital Output Connection
+
+LM393 Sensor Module    Arduino UNO
+-------------------    -----------
+VCC                    5V
+GND                    GND
+DO (Digital Output)    D2
+AO (Analog Output)     Not connected
+
+IMPORTANT:
+1. Connect GND of the LM393 module to Arduino GND.
+2. Connect VCC to the voltage specified by your particular LM393 module.
+   For most common Arduino LM393 sensor modules, 5V works.
+3. DO is connected to D2 because the Arduino code reads the digital output.
+4. AO is not required for the basic digital sensor-state code.
+5. The small potentiometer on the LM393 module can usually be adjusted
+   to change the detection threshold.
+6. Some LM393 modules are ACTIVE LOW, while others may behave differently.
+   If the output logic is reversed, change SENSOR_ACTIVE_STATE in the code.
+
+QUICK WIRING DIAGRAM
+
+     LM393 SENSOR MODULE
+     +------------------+
+     | VCC  ----------->|---- 5V (Arduino)
+     | GND  ----------->|---- GND (Arduino)
+     | DO   ----------->|---- D2 (Arduino)
+     | AO   ----------->|---- Not connected
+     +------------------+
+
+     Arduino UNO
+     +------------------+
+     | 5V  <------------ VCC
+     | GND <------------ GND
+     | D2  <------------ DO
+     +------------------+
